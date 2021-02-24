@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct SwiftUIARCardView: View {
     // setting up a state variable to hold the value of the displayed message on screen
@@ -26,23 +27,7 @@ struct SwiftUIARCardView: View {
                 // create a text element that will display the header text
                 // with a title font and a bold font weight
                 Text(headerText).foregroundColor(.white).bold().font(.title)
-                // create a button with a click event (action) that will say
-                // launching vr
-                Button(action: {
-                    self.headerText = "Loading Oasis Album Art VR"
-                    
-                }, label: {
-                    ZStack{
-                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                            .fill(Color.white)
-                            .frame(width: 200, height: 50, alignment: .center)
-                        NavigationLink(
-                            destination: VideoPlayerSwiftUI(),
-                            label: {
-                                Text("Launch Video")
-                            })
-                    }
-                })
+                VideoPlayer(player: AVPlayer(url: Bundle.main.url(forResource: "FallingDown-Live", withExtension: "mp4")!))
             }
             
         }

@@ -9,7 +9,7 @@ import SwiftUI
 import AVKit
 struct VideoPlayerSwiftUI: View {
     var body: some View {
-        VideoPlayer(player: AVPlayer(url: Bundle.main.url(forResource: "FallingDown-Live", withExtension: "mp4")!))
+        Text("Stuff")
     }
 }
 

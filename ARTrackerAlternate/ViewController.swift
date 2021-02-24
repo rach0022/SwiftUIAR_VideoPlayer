@@ -27,10 +27,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARImageTrackingConfiguration()
-        
         // set up the images to track to our AR Resource Group
         if let trackingImageRepo = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: Bundle.main) {
-            
             // bind our AR Configuration to the tracking image repo and
             // tell the AR kit how many images we want to track. In this case 1
             // but we can track up to 100
@@ -53,9 +51,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     // MARK: - ARSCNViewDelegate
     
      //Override to create and configure nodes for anchors added to the view's session.
-    private func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) -> SCNNode? {
+    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
-        print("happens")
+        
         // case the found anchor as an image anchor
         guard let imageAnchor = anchor as? ARImageAnchor else { return nil }
         
@@ -64,7 +62,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // now with the image name, make sure its the one we defined and then lets
         // add a node to the iamge
-        if imageName == "oasis_DigOutYourSoul" {
+        if imageName == "oasis" {
             // create a planar geometry wiht the SCNPlane
             let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height )
             

@@ -10,34 +10,16 @@ import SceneKit
 import ARKit
 import SwiftUI
 
-struct ViewControllerIndicator: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> ViewController {
-        return ViewController()
-    }
-    
-    typealias UIViewControllerType = ViewController
-    func updateUIViewController(_ uiViewController: ViewController, context: Context) {}
-}
-
 class ViewController: UIViewController, ARSCNViewDelegate {
     
     // comment out the original outlet and add the arView and loadView
-//    @IBOutlet var sceneView: ARSCNView!
-    var arView: ARSCNView {
-        return self.view as! ARSCNView
-    }
-    
-    override func loadView() {
-        self.view = ARSCNView(frame: .zero)
-    }
-    
+    @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
        // set the ar views delegate to self and set the scene as a SCNScene()
-        arView.delegate = self
-        arView.scene = SCNScene()
+        sceneView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +29,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let configuration = ARImageTrackingConfiguration()
         
         // set up the images to track to our AR Resource Group
-        if let trackingImageRepo = ARReferenceImage.referenceImages(inGroupNamed: "AR Ressources", bundle: Bundle.main) {
+        if let trackingImageRepo = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: Bundle.main) {
             
             // bind our AR Configuration to the tracking image repo and
             // tell the AR kit how many images we want to track. In this case 1
@@ -55,22 +37,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             configuration.trackingImages = trackingImageRepo
             configuration.maximumNumberOfTrackedImages = 1
             
-            // set the arView session to the configuration
-            arView.session.run(configuration)
-            arView.delegate = self
-            
         }
         
-
         // Run the view's session
-        arView.session.run(configuration)
+        sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         // Pause the view's session
-        arView.session.pause()
+        sceneView.session.pause()
     }
 
     // MARK: - ARSCNViewDelegate
@@ -78,7 +55,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
      //Override to create and configure nodes for anchors added to the view's session.
     private func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
-        
+        print("happens")
         // case the found anchor as an image anchor
         guard let imageAnchor = anchor as? ARImageAnchor else { return nil }
         
@@ -87,7 +64,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // now with the image name, make sure its the one we defined and then lets
         // add a node to the iamge
-        if imageName == "oasis_DigOutYourSoul-Art" {
+        if imageName == "oasis_DigOutYourSoul" {
             // create a planar geometry wiht the SCNPlane
             let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height )
             

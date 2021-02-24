@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-// used to play the video
+
 struct SwiftUIARCardView: View {
     // setting up a state variable to hold the value of the displayed message on screen
     @State private var headerText = "Oasis Falling Down AR Experience"
@@ -37,7 +37,7 @@ struct SwiftUIARCardView: View {
                             .fill(Color.white)
                             .frame(width: 200, height: 50, alignment: .center)
                         NavigationLink(
-                            destination: ViewControllerIndicator(),
+                            destination: VideoPlayerSwiftUI(),
                             label: {
                                 Text("Launch Video")
                             })

@@ -14,6 +14,8 @@
 		43774F7625E5DBA200F2EF11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43774F7525E5DBA200F2EF11 /* Assets.xcassets */; };
 		43774F7925E5DBA200F2EF11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43774F7725E5DBA200F2EF11 /* LaunchScreen.storyboard */; };
 		43774F8225E5DC0900F2EF11 /* SwiftUIARCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43774F8125E5DC0900F2EF11 /* SwiftUIARCardView.swift */; };
+		43774F8725E5E10300F2EF11 /* FallingDown-Live.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 43774F8625E5E10200F2EF11 /* FallingDown-Live.mp4 */; };
+		43774F8B25E5E1EC00F2EF11 /* VideoPlayerSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43774F8A25E5E1EC00F2EF11 /* VideoPlayerSwiftUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		43774F7825E5DBA200F2EF11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43774F7A25E5DBA200F2EF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43774F8125E5DC0900F2EF11 /* SwiftUIARCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIARCardView.swift; sourceTree = "<group>"; };
+		43774F8625E5E10200F2EF11 /* FallingDown-Live.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FallingDown-Live.mp4"; sourceTree = "<group>"; };
+		43774F8A25E5E1EC00F2EF11 /* VideoPlayerSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerSwiftUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				43774F7525E5DBA200F2EF11 /* Assets.xcassets */,
 				43774F7725E5DBA200F2EF11 /* LaunchScreen.storyboard */,
 				43774F7A25E5DBA200F2EF11 /* Info.plist */,
+				43774F8625E5E10200F2EF11 /* FallingDown-Live.mp4 */,
+				43774F8A25E5E1EC00F2EF11 /* VideoPlayerSwiftUI.swift */,
 			);
 			path = ARTrackerAlternate;
 			sourceTree = "<group>";
@@ -128,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43774F6F25E5DBA100F2EF11 /* art.scnassets in Resources */,
+				43774F8725E5E10300F2EF11 /* FallingDown-Live.mp4 in Resources */,
 				43774F7925E5DBA200F2EF11 /* LaunchScreen.storyboard in Resources */,
 				43774F7625E5DBA200F2EF11 /* Assets.xcassets in Resources */,
 				43774F7425E5DBA100F2EF11 /* Main.storyboard in Resources */,
@@ -143,6 +150,7 @@
 			files = (
 				43774F7125E5DBA100F2EF11 /* ViewController.swift in Sources */,
 				43774F8225E5DC0900F2EF11 /* SwiftUIARCardView.swift in Sources */,
+				43774F8B25E5E1EC00F2EF11 /* VideoPlayerSwiftUI.swift in Sources */,
 				43774F6D25E5DBA100F2EF11 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

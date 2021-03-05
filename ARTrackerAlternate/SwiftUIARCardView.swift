@@ -27,7 +27,8 @@ struct SwiftUIARCardView: View {
                 // create a text element that will display the header text
                 // with a title font and a bold font weight
                 Text(headerText).foregroundColor(.white).bold().font(.title)
-                VideoPlayer(player: AVPlayer(url: Bundle.main.url(forResource: "FallingDown-Live", withExtension: "mp4")!))
+                VideoPlayer(player: AVPlayer(url: Bundle.main.url(forResource: "FallingDown-Live", withExtension: "mp4")!)).scaledToFill()
+//                VideoPlayer(player: AVPlayer(url: URL(string: "https://www.youtube.com/watch?v=PJMOTbaVh44")!)).scaledToFill()
             }
             
         }
